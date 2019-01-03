@@ -1,0 +1,23 @@
+.top,
+.banner,
+.main,
+.footer {
+    background-color: #eee; /*设置背景颜色*/
+    border: 1px dashed #ccc;/*设置边框1像素，虚线，颜色*/
+    margin: 0 auto;  /*设置水平居中对齐*/
+    width: 900px;    /*宽度*/
+}
+.top{
+    height: 80px;
+}
+.banner{
+    height: 120px;
+    margin: 5px auto;
+}
+.main{
+    height: 500px;
+}
+.footer{
+    height: 100px;
+    margin: 5px auto 0;
+}
