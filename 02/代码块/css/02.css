@@ -1,0 +1,41 @@
+.top{
+    width: 900px;
+    height: 80px;
+    background-color: pink;
+    margin: 0 auto;
+
+}
+.banner{
+    width: 900px;
+    height: 150px;
+    background-color: purple;
+    margin: 0 auto;
+    
+}
+.main{
+    width: 900px;
+    height: 500px;
+    background-color: skyblue;
+    margin: 0 auto;
+    
+}
+.footer{
+    width: 900px;
+    height: 120px;
+    background-color: black;
+    margin: 0 auto;
+    
+}
+.left{
+    float: left;
+    width: 298px;
+    height: 500px;
+    background-color: yellow;
+    border: 1px solid black;
+}
+.right{
+    float: right;
+    background-color: deeppink;
+    height: 500px;
+    width: 590px;
+}
