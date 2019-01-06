@@ -1,0 +1,258 @@
+/* 版心 */
+.w {
+    width: 1190px;
+    margin: 0 auto;
+}
+.fr {
+    float: right;
+}
+.fl {
+    float: left;
+}
+h1 {
+    margin: 0;
+}
+input,button {
+    padding: 0;
+    border: 0;
+}
+a {
+    text-decoration: none;
+}
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?kw27xt');
+    src:  url('../fonts/icomoon.eot?kw27xt#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?kw27xt') format('truetype'),
+      url('../fonts/icomoon.woff?kw27xt') format('woff'),
+      url('../fonts/icomoon.svg?kw27xt#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  li {
+      list-style: none;
+  }
+  ul {
+      margin: 0;
+      padding: 0;
+
+  }
+  .style-red {
+    color: #f10215!important;
+  }
+  body {
+      background-color: #f6f6f6;
+  }
+/* 京东顶部开始 */
+.J_event {
+    background-color: black;
+
+}
+.J_event a {
+    display: block;
+    height: 80px;
+    background: url(../images/顶部.png) no-repeat;
+    position: relative;
+}
+.J_event a i {
+    width: 20px;
+    height: 20px;
+    background-color: #666;
+    position: absolute;
+    right: 0;
+    top: 5px;
+    font-family: "icomoon";
+    font-style: normal;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    background-color: rgba(0,0,0,0.4)
+}
+
+/* 京东顶部结束 */
+/* 京东头部开始 */
+.shortcut {
+    height: 30px;
+    background-color: #e3e4e5;
+    border-bottom: 1px solid #dddddd;
+    color: #9d9d9d;
+    font-size: 12px;
+    line-height: 30px;
+}
+.shortcut a {
+    color: #9d9d9d;
+    font-size: 12px;
+    text-decoration: none;
+}
+.pos {
+    font-family: "icomoon";
+    font-style: normal;
+    font-size: 14px;
+    color: #f10215;
+}
+.shortcut .fl li {
+    margin-left: 200px;
+    height: 30px;
+}
+.shortcut .fr li {
+    float: left;
+}
+.shortcut a:hover {
+    color: #c81623;
+}
+.shortcut .fr .spacer {
+    width: 1px;
+    height: 10px;
+    background-color: #ccc;
+    margin: 10px 10px 0;
+}
+.dropdown {
+    padding-right: 15px;
+    position: relative;
+}
+.dropdown i {
+    font-family: "icomoon";
+    font-style: normal;
+    font-size: 16px;
+    color: #9d9d9d;
+    position: absolute;
+    right: -2px;
+    top: -2px;
+}
+.sjjd {
+    position: relative;
+}
+.erweima {
+    width: 60px;
+    height: 60px;
+    padding: 3px;
+    border: 1px solid #ccc;
+    position: absolute;
+    top: 32px;
+    left: -8px;
+    display: none;
+}
+/* 快捷导航部分结束 */
+/* header部分 star */
+.header {
+    height: 140px;
+}
+.inner {
+    height: 140px;
+    position: relative; 
+}
+.logo {
+    width: 190px;
+    height: 170px;
+    position: absolute;
+    top: -30px;
+    left: 0;
+    box-shadow: 0 -12px 10px rgba(0,0,0,0.2)
+}
+h1 {
+    margin: 0;
+}
+.logo a {
+    display: block;
+    width: 190px;
+    height: 170px;
+    background: url(../images/logo.png) no-repeat;
+    text-indent: -999px;
+    overflow: hidden;
+}
+.search {
+    width: 550px;
+    height: 35px;
+    position: absolute;
+    top: 25px;
+    left: 320px;
+}
+.search input {
+    width: 493px;
+    height: 33px;
+    border: 1px solid #f10215;
+    padding: 0 0 0 5px;
+    outline: none;
+    color: #989898;
+    float: left;
+}
+.search button {
+    height: 35px;
+    width: 50px;
+    background-color: #f10215;
+    float: left;
+    cursor: pointer;  /* 鼠标变成小手 */
+    outline: none;
+}
+.search i {
+    font-family: "icomoon";
+    color:#fff;
+    font-style: normal;
+    font-size: 16px;
+}
+.search em{
+    position: absolute;
+    top: 10px;
+    right: 65px;
+    width: 19px;
+    height: 15px;
+    background: url(../images/精灵兔.png) no-repeat;
+    cursor: pointer;
+}
+.search em:hover {
+    background-position: -30px 0;
+}
+.hotwords {
+    position: absolute;
+    top: 70px;
+    left: 320px;
+}
+.hotwords a {
+    color: #9e9b99;
+    font-size: 12px;
+}
+.hotwords a:hover {
+    color: #f10215;
+}
+.myCar {
+    width: 188px;
+    height: 33px;
+    border: 1px solid #ccc;
+    position: absolute;
+    top: 25px;
+    right: 100px;
+    text-align: center;
+    line-height: 33px;
+}
+.myCar a {
+    font-size: 12px;
+    color: #f10215;
+}
+.myCar i {
+    font-family: "icomoon";
+    font-style: normal;
+    color: #f10215;
+    padding-right: 2px;
+}
+.myCar s {
+    position: absolute;
+    top: 5px;
+    left: 140px;
+    text-decoration: none;
+    background-color: #f10215;
+    height: 13px;
+    line-height: 16px;
+    font-size: 12px;
+    padding: 0 3px;
+    border-radius: 7px;
+    color: #fff;
+}
+.computer {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+}
+.computer a {
+
+}
+/* header部分 end */
