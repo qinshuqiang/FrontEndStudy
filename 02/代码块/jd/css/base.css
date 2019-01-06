@@ -1,15 +1,22 @@
 /* 版心 */
+* {
+    margin: 0;
+    padding: 0;
+}
 .w {
     width: 1190px;
     margin: 0 auto;
 }
+.clearfix:after{content: ""; display: block; height: 0; clear:both; visibility: hidden;}
+
+.clearfix {*zoom: 1;}  
 .fr {
     float: right;
 }
 .fl {
     float: left;
 }
-h1 {
+h1,h5,p {
     margin: 0;
 }
 input,button {
@@ -100,7 +107,7 @@ a {
 .shortcut a:hover {
     color: #c81623;
 }
-.shortcut .fr .spacer {
+.spacer {
     width: 1px;
     height: 10px;
     background-color: #ccc;
@@ -255,4 +262,185 @@ h1 {
 .computer a {
 
 }
+.navitems {
+    position: absolute;
+    bottom: 0;
+    left: 200px;
+}
+.navitems ul {
+    float: left;
+}
+.navitems ul li {
+    float: left;
+    margin-left: 30px;
+}
+.navitems li a {
+    font-size: 16px;
+    height: 40px;
+    color: #555a5f;
+    font-weight: bold;
+    height: 40px;
+    line-height: 40px;
+    display: block;
+}
+.navitems li a:hover {
+    color: #f10215;
+}
+.navitems .spacer {
+    float: left;
+    margin:15px -10px 0 20px;
+ }
 /* header部分 end */
+/* footer开始啦 */
+.footer {
+    height: 560px;
+    background-color: #eaeaea;
+}
+.footer-service {
+    border-bottom: 1px solid #dedede;
+}
+.footer-service-inner {
+    padding: 30px 0;
+    /* background-color: pink; */
+}
+.footer-service-inner li {
+    float: left;
+    width: 297px;
+    height: 42px;
+    /* background-color: purple; */
+}
+.service_unit {
+    width: 225px;
+    height: 42px;
+    margin: 0 auto;
+    position: relative;
+}
+.service_unit h5 {
+    width: 36px;
+    height: 42px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background-color: black; */
+    background: url(../images/多快好省.png) no-repeat;
+    background-position: 0 -192px;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+.service_unit p {
+    line-height: 42px;
+    margin-left: 45px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.service_unit .kuai {
+    background-position: -41px -192px;
+}
+.service_unit .hao {
+    background-position: -82px -192px;
+}
+.service_unit .sheng {
+ background-position: -123px -192px;
+} 
+
+.help {
+    height: 180px;
+    padding-top: 20px;
+
+}
+.help dl {
+    float: left;
+    width: 198px;
+}
+.help dt {
+     font-weight: 700;
+     font-size: 14px;
+     color: #666;
+     height: 30px;
+
+} 
+.help dd a {
+    color: #727272;
+    font-size: 12px;
+    height: 22px;
+}
+.help dd a:hover {
+    color: #f10215;
+}
+.help .cover {
+    float: right;
+    width: 200px;
+    height: 150px;
+    background: url(../images/地图.png) no-repeat;
+}
+.cover dt {
+    text-align: center;
+}
+.cover .info {
+    width: 175px;
+    height: 50px;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-left: 10px;
+    line-height: 18px;
+    color: #727272;
+}
+.help .more {
+    text-align: right; 
+    padding-right: 10px;
+}
+.copyright {
+    border-top: 1px solid #e1e1e1;
+    padding-top: 15px; 
+}
+.links {
+    text-align: center;
+}
+.links a {
+    color: #727272;
+    font-size: 12px;
+    
+}
+.links span {
+    font-size: 12px;
+    color: #d4cdcd;
+    margin: 0 6PX;
+}
+.c-info {
+    font-size: 12px;
+    color: #9e9e9b;
+    text-align: center;
+    line-height: 20px;
+    margin-top: 10px;
+}
+img {
+    vertical-align: top; /* 去除图片底侧缝隙，图片和文字基线对齐 */
+}
+.tupian {
+    text-align: center;
+    margin-top: 25px;
+}
+.tupian a{
+    width: 104px;
+    height: 32px;
+    display: inline-block;
+    background: url(../images/地图.png) no-repeat;
+}
+.tupian .tupian-a {
+    background-position: -210px 0px;
+}
+.tupian .tupian-b {
+    background-position: -210px -36px;
+}
+.tupian .tupian-c {
+    background-position: -210px -72px;
+}
+.tupian .tupian-d {
+    background-position: -210px -108px;
+}
+.tupian .tupian-e {
+    background-position: -210px -144px;
+}
+.tupian .tupian-f {
+    background-position: -210px -181px;
+}

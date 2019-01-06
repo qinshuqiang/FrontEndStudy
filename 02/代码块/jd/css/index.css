@@ -1,0 +1,247 @@
+.jd {
+    position: relative;
+    height: 480px;
+}
+.jd-inner {
+    height: 480px;
+    position: relative;
+    z-index: 9;
+}
+.ad {
+    height: 480px;
+    background: url(../images/guanggao.png) no-repeat top center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;/* 一定要写 */
+    z-index: 0;
+}
+.ad a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.jd-clo1 {
+    width: 190px;
+    height: 465px;
+    background-color: #6e6568;
+    float: left;
+    padding-top: 15px;
+}
+.jd-clo1 li {
+    padding-left: 10px;
+    height: 28px;
+    line-height: 28px;
+}
+.jd-clo1 li a {
+    color: #ffffff;
+    font-size: 14px;
+}
+.jd-clo1 li span {
+    font-size: 12px;
+    color: #ffffff;
+}
+.jd-clo1 li:hover {
+    background-color: #999395;
+}
+.jd-clo2 {
+    width: 790px;
+    height: 480px;
+    background-color: purple;
+    float: left;
+    margin-left: 20px;
+}
+.jd-clo2-hd {
+    height: 340px;
+    background-color: aqua;
+    margin-bottom: 10px;
+    position: relative;
+}
+.jd-clo2-hd ul img {
+    height: 340px;
+    width:790px;
+}
+.jd-clo2-bd div{
+    width: 390px;
+    height: 130px;
+    float: left;
+}
+.firstPIC {
+    margin-right: 10px;
+}
+.jd-clo2-bd div img {
+    width: 390px;
+    height: 130px;
+}
+
+.arr-l,.arr-r {
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    width: 30px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.3);
+    font-family: "icomoon";
+    color: #ffffff;
+    text-align: center;
+    line-height: 60px;
+    font-size: 25px;
+}
+.arr-r {
+    right: 0;
+}
+.arr-l {
+    left: 0;
+}
+.jd-clo2-hd ol {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -90px;
+    width: 180px;
+    height: 20px;
+    background:rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+.jd-clo2-hd ol li {
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    float: left;
+    border-radius: 50%;
+    margin:4px 5px;
+    cursor: pointer;
+}
+.jd-clo2-hd .current {
+    background-color: #f10215;
+}
+.jd-clo3 {
+    width: 190px;
+    height: 480px;
+    float: right;
+}
+.jd-clo3 a {
+    font-size: 12px;
+    color: #747474;
+}
+.user {
+    height: 95px;
+    padding: 20px 15px 0;
+}
+.user-info {
+    height: 40px;
+    padding-left: 54px;
+    font-size: 12px;
+    color: #747474;
+    line-height: 22px;
+    position: relative;
+}
+.user-info a {
+    font-size: 12px;
+    color: #747474;
+}
+.user-info a:hover {
+    color: #f10215;
+}
+.info-img {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.info-img img{
+    width: 100%;
+    height: auto;
+}
+.user-profit{
+    margin-top: 14px;
+}
+.user-profit a {
+    width: 70px;
+    height: 20px;
+    border: 2px solid #f10215;
+    font-size: 12px;
+    color: #f10215;
+    text-align: center;
+    line-height: 20px;
+    margin-right: 4px;
+    padding:5px;
+}
+.user-profit a:hover {
+    background-color: #f10215;
+    color: #fff;
+}
+.news {
+    height: 149px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 15px 0;
+}
+.tab-hd {
+    border-bottom: 1px solid #ccc;
+    padding: 3px 0;
+    position: relative;
+}
+.tab-hd a {
+    font-size: 12px;
+    color: #747474;
+    margin: 0 5px;
+}
+.cuxiao {
+    border-right: 1px solid #ccc;
+    padding-right: 10px;
+}
+.news .more1 {
+    position: absolute;
+    top: 8px;
+    right: 0;
+}
+.line {
+    height: 2px;
+    width: 28px;
+    background-color: #f10215;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+.tab-bd {
+    margin-top: 10px;
+}
+.tab-bd li {
+    height: 23px;
+    line-height: 23px;
+}
+.jd-service {
+    height: 209px;
+    overflow: hidden;
+}
+.jd-service ul {
+    width: 195px;
+}
+.jd-service li {
+    width: 47px;
+    height: 69px;
+    float: left;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.jd-service li a {
+    width: 100%;
+    height: 100%;
+    height: auto;
+    display: block;
+}
+.jd-service li i {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: 15px auto 8px;
+    background: url(../images/小图标精灵图.png) no-repeat;
+    
+}
+.jd-service a p {
+    text-align: center;
+}
