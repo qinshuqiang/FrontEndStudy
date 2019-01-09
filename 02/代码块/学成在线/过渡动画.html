@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        /* transition: width,height/属性 3s过渡时间 ease方式 0s延迟; */
+        transition: all 3s ease 0s;  /* 过渡写在本身上（谁做过渡写在谁身上） */
+    }
+    div:hover {
+        width: 200px;
+        height: 200px;
+    }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
