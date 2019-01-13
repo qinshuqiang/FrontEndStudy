@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        console.log("第一种演示");
+        if (8 > 6) {
+            console.log(8)
+        }
+        console.log("第二种演示");
+        var num1 = 10;
+        var num2 = 100;
+        if (num1 > num2) {
+            console.log("确定吗")
+        };
+        console.log("上面的代码块结果为false不运行了了")
+        console.log("第三种演示");
+        var age = 19;
+        if (age >= 18) {
+            console.log("已经成年了")
+        };
+        console.log("第四种演示");
+        var xiaoming = "帅";
+        if (xiaoming == "帅") {
+            console.log("真的帅哦")
+        }
+
+
+
+
+
+        console.log("if-else演示开始");
+        console.log("第一种演示");
+        var age = 10;
+        if (age >= 18) {
+            console.log("可以看电影了");
+        } else {
+            console.log("还不可以看电影哦");
+        };
+        console.log("第二种演示");
+        // 让用户输入年龄
+        var age = prompt("请输入您的年龄---if-else测试，prompt--弹窗，并且有输入框，把内容赋予给age，类型为字符串");//prompt--弹窗，并且有输入框，把内容赋予给age，类型为字符串
+        console.log(age);
+        if (age >= 18) {
+            console.log("可以看电影了");
+        } else {
+            console.log("还不可以看电影哦");
+        };
+        console.log("第三种演示---练习1");
+        var num1 = 12;
+        var num2 = 18;
+        if (num1 > num2) {
+            console.log("num1比较大");
+        }
+        else if (num2 > num1) {
+            console.log("num2比较大");
+        } else {
+            console.log("他们相等哦");
+        };
+        console.log("第四种演示---练习2");
+        var num4 = 15156;
+        if (num4 % 2 == 0) {
+            console.log("偶数")
+        } else {
+            console.log("奇数")
+        }
+
+
+        //   三元表达式
+        console.log("三元表达式")
+        var x = 10;
+        var y = 20;
+        var z = x > y ? x : y;
+        console.log(z);
+        console.log("第二种演示");
+        var age = 20;
+        var result = age >= 18 ? "成年了" : "未成年哦";
+        console.log(result);
+
+
+
+        // if-else  if-else....语句：
+        console.log("if-else  if-else....语句：");
+        var score = prompt("请输入您的成绩");
+        if (score > 100) {
+            console.log("最高分是一百分.输入正确的成绩，谢谢");
+        }else if (score > 90 ){
+            console.log("A级");
+        } else if (score > 80) {
+            console.log("B级");
+        } else if (score > 70) {
+            console.log("C级");
+        }else if (score > 60) {
+            console.log("D级");
+        } else if(score>=0){
+            console.log("E级");
+        }else{
+            console.log("输入正确的成绩，谢谢")
+        };
+        // switch-case语句
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

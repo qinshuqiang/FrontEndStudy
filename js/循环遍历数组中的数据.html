@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var arr = [25, 1, 2, 3, 4, 5, 465, 1, 12318, 489, 156, 1231, 486, 7, 8, 9];
+        var num = 0;
+        for (var i = 0; i < arr.length; i++) {
+            num += arr[i]
+        }
+        console.log(num);
+        console.log(num / arr.length);
+        var maxNum = arr[0];
+        for (var i = 0; i < arr.length; i++) {
+            if (maxNum > arr[i]) {
+                continue;
+            }
+            maxNum = arr[i];
+        }
+        console.log(maxNum);
+        var maxNum = arr[0];
+        for (var i = 0; i < arr.length; i++) {
+            if (maxNum < arr[i]) {
+                continue;
+            }
+            maxNum = arr[i];
+        }
+        console.log(maxNum);
+        var arr = [25, 1, 2, 3, 4, 5, 465, 1, 12318, 489, 156, 1231, 486, 7, 8, 9];
+        var arr2=[];
+        for(var i=0;i<arr.length;i++){
+            if(arr[i]!=1){
+                arr2[arr2.length]=arr[i];
+            }
+        }
+        arr2[arr2.length]=1
+        console.log(arr2);
+        var arr3=[1];
+        for(var i=0;i<=arr.length/2;i++){
+            arr[i]=arr3[0];
+            arr[arr.length-i-1]=arr[i];
+            arr[i]=arr3[0];
+        }
+        console.log(arr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
