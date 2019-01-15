@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 求两个数字的和
+        function getF1(x, y) {
+            return x + y;
+        }
+        // 求1到100的整数和
+        console.log(getF1(10, 20))
+        function getSum() {
+            var sum = 0;
+            for (var i = 1; i <= 100; i++) {
+                sum += i;
+            }
+            return sum;
+        }
+        console.log(getSum())
+        // 求1到n之间的的整数的和  n比1大
+        function getOne(n) {
+            var sum1 = 0;
+            for (var i = 1; i < n; i++) {
+                sum1 += i;
+            }
+            return sum1;
+        }
+        console.log(getOne(100))
+        // 求N到M之间的的整数和
+        function getEverySum(n, m) {
+            var sum2 = 0;
+            if (n < m) {
+                for (var i = n + 1; i < m; i++) {
+                    sum2 += i;
+                }
+            } else if (n > m) {
+                for (var i = m + 1; i < n; i++) {
+                    sum2 += i;
+                }
+            } else if (n = m) {
+                sum2 = 0;
+            }
+            return sum2;
+        }
+        console.log(getEverySum(5, 1))
+        // 圆的面积
+        function getYuan(r) {
+            return Math.PI * r * r
+        }
+        console.log(getYuan(5));
+        // 求两个数中的最大值
+        function getTwo(x, y) {
+            var sum3;
+            if (x != y) {
+                if (x > y) {
+                    sum3 = x;
+                } else {
+                    sum3 = y;
+                }
+            } else {
+                var sum3 = "相等"
+            }
+            return sum3;
+        }
+        console.log(getTwo(7, 8));
+        // 求三个数中的最大值
+        function getThree(x, y, z) {
+            return x > y ? (x > z ? x : z) : (y > z ? y : z);
+        }
+        console.log(getThree(7, 8, 9));
+        // 判断一个数是否指数
+        function getSu(x) {
+            var sum4;
+            for (var i = 2; i < x - 1; i++) {
+                if (x % i == 0) {
+                    return "不是素数"
+                }
+
+            }
+            return "素数"
+        }
+        console.log(getSu(8));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
