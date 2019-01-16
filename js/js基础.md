@@ -828,3 +828,25 @@ date
 string
 
 object
+
+### date对象
+
+var 变量名=new Date();
+
+var dt=+new Date();    不支持html5的浏览器，可以使用这个方式
+
+| 属性                    | 描述            |
+| ----------------------- | --------------- |
+| dt.getFullYear()        | 年              |
+| dt.getMonth()           | 月--从0开始的   |
+| dt.getDate()            | 日              |
+| dt.getHours()           | 小时            |
+| dt.getMinutes()         | 分钟            |
+| dt.getSeconds()         | 秒              |
+| dt.getDay()             | 星期--从0开始的 |
+| dt.toDateString()       | 日期--英文      |
+| dt.toLocaleDateString() | 日期--数字      |
+| dt.toTimeString()       | 时间            |
+| dt.toLocaleTimeString() | 时间            |
+| dt.valueOf()            | 毫秒            |
+

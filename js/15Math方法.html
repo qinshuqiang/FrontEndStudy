@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //定义一个对象，实现系统max的方法
+        function MyMath() {
+            // 添加了一个方法
+            this.getMax = function () {
+                var max = arguments[0];
+                for (var i = 0; i < arguments.length; i++) {
+                    if (i < arguments[i]) {  //当i小于遍历的值时，交换max变量的值，取最小值的方式也可如此
+                        max = arguments[i];
+                    }
+                }
+                return max;
+
+            }
+
+        }
+        var mt = new MyMath();
+        var result = mt.getMax(10, 20, 30, 40, 50, 1, 2, 455, 451)
+        console.log(result)
+        //产生一个十六进制的颜色值
+        function getColor() {
+            var str = "#";
+            //一个十六进制的数组
+            var arr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"]
+            for (var i = 0; i < 6; i++) {
+                var num = parseInt(Math.random() * 16)
+                str+=arr[num]
+            }
+            return str;
+        }
+        console.log(getColor())
+        </script>
+</head >
+
+            <body>
+
+            </body>
+
+</html >

@@ -14,17 +14,28 @@
         // }
         // console.log(obj.name);
         // obj.eat();
-        function Person(name, age) {
-            this.name = name;
-            this.age = age;
-            this.sayHi = function () {
-                console.log("我叫" + name + "，今年" + age + "岁。");
+        // function Person(name, age) {
+        //     this.name = name;
+        //     this.age = age;
+        //     this.sayHi = function () {
+        //         console.log("我叫" + name + "，今年" + age + "岁。");
+        //     }
+        // }
+        // var obj = new Person("小明", "18");
+        // obj.sayHi();
+        // console.log(obj.name);
+        // console.log(obj.age);
+        function Obj(name,age){
+            this.name=name,
+            this.age=age,
+            this.f1=function (){
+                console.log(this.name+this.age)
             }
-        }
-        var obj = new Person("小明", "18");
-        obj.sayHi();
-        console.log(obj.name);
-        console.log(obj.age);
+        };
+        var xiaoming=new Obj("小明",18);
+        console.log(xiaoming.name);
+        console.log(xiaoming.age);
+        xiaoming.f1();
     </script>
 </head>
 
