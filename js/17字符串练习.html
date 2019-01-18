@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var str = "今天有点冷，真的";
+        var index = str.indexOf("有点");
+        str = str.substr(index, 2);
+        console.log(str);
+
+        var str2 = "Hello,who are you";
+        //var index=str2.indexOf("o",0);
+        var index = 0;
+        var key = "o";
+        while ((index = str2.indexOf(key, index)) != -1) {//如果是-1，证明找完了
+            console.log(index);
+            index += key.length;
+        }
+        //console.log(index);z
+        var str3 = "NJKzBJHdjsBHJzzzzBznaknaizzjpowqrwqlkrlmrkewjnjasdaondsvjnqxsxskjEWRWjoij"
+        str3 = str3.toLocaleLowerCase();
+        var obj = {};
+        for (var i = 0; i < str3.length; i++) {
+            var key = str3[i];
+            if (obj[key]) {  //判断obj里有没有这个键（字母），有的话，值+1
+                obj[key]++
+            } else {
+                obj[key] = 1;//加入第一次判断obj对象里没有存在的键，并赋值为出现了1次
+            }
+        }
+        for(key in obj){
+            console.log(key+"出现了"+obj[key]+"次")
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
