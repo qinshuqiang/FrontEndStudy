@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+    <input type="button" value="点击显示效果" id="btn"/>
+    <p>哈哈，我在这里</p>
+    <p>哈哈，我在这里</p>
+    <p>哈哈，我在这里</p>
+    <p>哈哈，我在这里</p>
+    <p>哈哈，我在这里</p>
+    <script>
+        
+    document.getElementById("btn").onclick=function(){
+        // 根据标签名字获取标签，返回的是一个伪数组（无论获取的标签是多少个，都会返回数组）
+        var pObjs=document.getElementsByTagName("p");
+        //循环遍历这个数组
+        for(var i=0;i<pObjs.length;i++){
+            //每个p标签设置文字内容；
+            pObjs[i].innerText="我们都是p";
+        }
+
+    }
+    
+    </script>
+</body>
+</html>

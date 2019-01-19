@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="common.js"></script>
+</head>
+
+<body>
+    <input type="button" value="更换" id="btn" disabled="disabled"/>
+    <!-- disabled是只读的意思 -->
+    <select name="" id="ss">
+        <option value="1">红烧豆腐</option>
+        <option value="2">爆炒猪耳朵</option>
+        <option value="3">清蒸咸鸭蛋</option>
+        <option value="4" id="op1">水煮白开水</option>
+        <option value="5">煎酿茄子</option>
+    </select>
+    <script>
+        my$("btn").onclick=function(){
+            my$("op1").selected=true;
+        }
+
+    </script>
+</body>
+
+</html>

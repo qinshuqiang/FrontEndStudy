@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <input type="button" value="开始分离代码" id="btn"/>
+        <!-- HTML标签中的id属性存储的值是惟一的，就像身份证号码一样，唯一的 -->
+        <script>
+        // 从文档中找到id值为btn的标签
+        //document.getElementById("id属性的值")，--返回的是一个元素对象
+        var btnObj=document.getElementById("btn")
+        // 为按钮注册事件
+        btnObj.onclick=f2;//不加括号
+        function f2(){
+            alert("进行分离了哦")
+        }        
+        </script>
+        <!-- 最终版本的代码 -->
+        <input type="button" id="btn1" value="最终版本"/>
+        <script>
+        //根据id属性的值从整个文档中获取整个元素（标签）
+        var btnObj1=document.getElementById("btn1").onclick=function (){
+            alert("再次弹框了")
+        }
+        </script>
+</body>
+</html>

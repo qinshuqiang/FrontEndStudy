@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+    <input type="button" value="设置内容" id="btn"/>
+    <p id="p1"></p>
+    <script>
+    var btnObj=document.getElementById("btn");
+    btnObj.onclick=function(){
+        document.getElementById("p1").innerText="这是一个p标签";
+        // 凡是成对的标签，中间的文本内容，设置的时候，都使用innerText整个属性方式
+    }
+    
+    
+    </script>
+</body>
+</html>
