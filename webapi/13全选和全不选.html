@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <div>
+            <input type="checkbox" id="qx_all" /><span>全选</span>
+        </div>
+        <div id="dx">
+            <input type="checkbox" /><span>水煮白开水</span><br />
+            <input type="checkbox" /><span>可乐鸡翅</span><br />
+            <input type="checkbox" /><span>红烧排骨</span><br />
+            <input type="checkbox" /><span>清蒸皖鱼</span><br />
+            <input type="checkbox" /><span>煎酿茄子</span>
+        </div>
+    </table>
+    <script src="common.js"></script>
+    <script>
+        var qx_all = my$("qx_all");
+        var dx_all = my$("dx").getElementsByTagName("input");
+        qx_all.onclick = function () {
+            for (i = 0; i < dx_all.length; i++) {
+                dx_all[i].checked = this.checked;
+                console.log(dx_all[i])
+            }
+        }
+        for(i=0;i<dx_all.length;i++){
+            dx_all[i].onclick=function(){
+                var falg=true;
+                for(var j=0;j<dx_all.length;j++){
+                    if(!dx_all[j].checked){
+                        falg=false;
+                        break;
+                    }
+                }
+                qx_all.checked=falg;
+            }
+        }
+    </script>
+</body>
+
+</html>
