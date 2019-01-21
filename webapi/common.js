@@ -54,3 +54,28 @@ function getLastElementChild(element) {
         return node;
     }
 }
+
+/**
+ * 为元素绑定事件和解绑事件的兼容代码
+ * 
+ */
+// 绑定事件
+function addElementListener(element,type,fn){
+    if(element.addElementListener){
+        element.addElementListener(type,fn,false);
+    }else if(element.attachEvent){
+        element.attachEvent(("on"+type,fn))
+    }else{
+        element["on"+type]=fn;
+    }
+}
+// 解绑事件
+function removeElementListener(element,type,fnName){
+    if(element.removeElementListener){
+        element.removeElementListener(type,fnName,false);
+    }else if(element.detachEvent){
+        element.detachEvent(("on"+type,fnName))
+    }else{
+        element["on"+type]=null;
+    }
+}

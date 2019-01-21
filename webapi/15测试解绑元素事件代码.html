@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="绑定" id="btn1" />
+    <input type="button" value="解绑" id="btn2" />
+    <script>
+        function my$(id) {
+            return document.getElementById(id)
+        }
+        // 绑定事件
+        function addEventListener(element, type, fn) {
+            if (element.addEventListener) {
+                element.addEventListener(type, fn, false);
+            } else if (element.attachEvent) {
+                element.attachEvent(("on" + type, fn))
+            } else {
+                element["on" + type] = fn;
+            }
+        }
+        // 解绑事件
+        function removeEventListener(element, type, fnName) {
+            if (element.removeEventListener) {
+                element.removeEventListener(type, fnName, false);
+            } else if (element.detachEvent) {
+                element.detachEvent(("on" + type, fnName))
+            } else {
+                element["on" + type] = null;
+            }
+        }
+
+        var btn1 = my$("btn1");
+        var btn2 = my$("btn2");
+        function f1() {
+            console.log("哈哈哈，你禁用我试试")
+        } function f2() {
+            console.log("哈哈哈，你再次禁用我试试")
+        }
+        addEventListener(btn1, "click", f1);
+        addEventListener(btn1, "click", f2);
+        btn2.onclick = function(){
+            removeEventListener(btn1, "click", f1);
+            removeEventListener(btn1, "click", f2);
+        }
+    </script>
+</body>
+
+</html>
