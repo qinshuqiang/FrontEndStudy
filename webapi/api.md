@@ -141,7 +141,9 @@ return false；
 
 对象.on事件名字=null
 
-2、.addEventListener("事件类型"，事件处理函数，false)
+2、.addEventListener("没有on的事件类型"，事件处理函数，控制事件阶段的false或者true)
+
+事件阶段：事件捕获阶段（从里到外），事件目标阶段（最开始选择的那个），事件冒泡阶段（从里到外）
 
 .removeEventListener("事件类型"，事件处理函数，false)
 
@@ -159,9 +161,62 @@ return false；
 
 1、window.event.cancelBubble=true  
 
-火狐不支持
+火狐不支持，window.event是一个对象，ie支持的
 
 2、 e.stopPropagation();
 
 IE不支持，谷歌、火狐支持
+
+window.event和e都是事件参数对象，一个是IE标准，一个是火狐的标准
+
+事件参数e在IE8浏览器中是不存在的，在此时用window.event来代替。
+
+事件冒泡是从里向外的，事件的阶段有三个：
+
+通过e,eventPhase这个属性就可以知道当前的事件是什么阶段，如果这个属性是：
+
+1------捕获阶段----捕获阶段
+
+2------目标阶段---最开始选择那个
+
+3------冒泡阶段---从里向外
+
+一般默认都是冒泡阶段，很少用捕获阶段
+
+# BOM
+
+| 属性                           | 值                                          |
+| ------------------------------ | ------------------------------------------- |
+| alert                          | 弹出消息，只有一个按钮                      |
+| prompt                         | 弹出一个可以输入的框                        |
+| confirm                        | 弹出消息，有两个按钮                        |
+| window.onload=function         | 当页面加载完毕，才会运行函数                |
+| window.onunload=function       | 只支持IE8，页面关闭前运行函数               |
+| window.onbeforeunload=function | 只支持IE8，页面关闭后运行函数               |
+| window.location                | 可以获取设置地址栏的URL                     |
+| location.href="url地址"        | 设置跳转的页面地址                          |
+| location.assign("url地址")     | 设置跳转页面地址                            |
+| location.reload()              | 重新加载页面                                |
+| location.replace("URL地址")    | 设置跳转的页面地址，没有历史记录            |
+| window.history.back()          | 后退到浏览器历史记录的上一页                |
+| window.history.forward()       | 前进到浏览器历史记录的前一个                |
+| window.history.go(number)      | 正数为前进到浏览器历史记录的前X个，反之后退 |
+| window.navigator.platform      | 可以判断浏览器所在的系统平台类型            |
+| window.navigator.userAgent     | 可以判断用户浏览器的类型                    |
+
+# 计时器
+
+bom中有两个计时器
+
+参数1：函数
+
+参数2：时间--- 毫秒---1000毫秒---1秒
+
+执行过程，页面加载完毕后，过了x秒，执行了一次代码，又过了x秒，再次执行
+
+setInterval(函数,number);
+
+清除定时器
+
+window.clearInterval(要清理的定时器的ID的值);
 
