@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="btn" type="button" value="点击获取验证码"/>
+    <script src="common.js"></script>
+    <script>
+        var btn = my$("btn");
+        
+        btn.onclick = function () {
+            var time = 60;
+            var timeID=setInterval(function(){
+                time--;
+                if (time > 0) {
+                    btn.value = time + "s后再次获取";
+                    btn.disabled=true;
+                } else if(time<=0) {
+                    btn.value="点击再次获取";
+                    btn.disabled=false;
+                    clearInterval(timeID);
+                }
+                
+            }, 1000);
+
+        }
+    </script>
+</body>
+
+</html>

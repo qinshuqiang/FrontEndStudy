@@ -60,22 +60,42 @@ function getLastElementChild(element) {
  * 
  */
 // 绑定事件
-function addElementListener(element,type,fn){
-    if(element.addElementListener){
-        element.addElementListener(type,fn,false);
-    }else if(element.attachEvent){
-        element.attachEvent(("on"+type,fn))
-    }else{
-        element["on"+type]=fn;
+function addElementListener(element, type, fn) {
+    if (element.addElementListener) {
+        element.addElementListener(type, fn, false);
+    } else if (element.attachEvent) {
+        element.attachEvent(("on" + type, fn))
+    } else {
+        element["on" + type] = fn;
     }
 }
 // 解绑事件
-function removeElementListener(element,type,fnName){
-    if(element.removeElementListener){
-        element.removeElementListener(type,fnName,false);
-    }else if(element.detachEvent){
-        element.detachEvent(("on"+type,fnName))
-    }else{
-        element["on"+type]=null;
+function removeElementListener(element, type, fnName) {
+    if (element.removeElementListener) {
+        element.removeElementListener(type, fnName, false);
+    } else if (element.detachEvent) {
+        element.detachEvent(("on" + type, fnName))
+    } else {
+        element["on" + type] = null;
     }
+}
+/**
+ * 一个小小的计时移动函数
+ * @param {元素} element 
+ * @param {移动的距离} target 
+ */
+function animate(element, target) {
+    clearInterval(element.timeID);
+    element.timeID = setInterval(function () {
+        var current = element.offsetLeft;//数据类型，没有PX
+        var step = 10;
+        step = current < target ? step : -step;
+        current += step;
+        if (Math.abs(target - current) > Math.abs(step)) {
+            element.style.left = current + "px";
+        } else {
+            clearInterval(element.timeID);
+            element.style.left = target + "px";
+        }
+    },50)
 }
