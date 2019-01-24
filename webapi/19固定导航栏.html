@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100%;
+            height: 500px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>111</div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script src="common.js"></script>
+    <script>
+        function getScroll() {
+            return {
+                left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft||0,
+                top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+            };
+        };
+        window.onscroll = function () {
+            console.log(getScroll().top);
+        };
+    </script>
+</body>
+
+</html>

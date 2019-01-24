@@ -1,28 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-    div {
-        width: 200px;
-        height: 200px;
-        position: relative;
-        background-color: blue;
-    }
+        div {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            background-color: blue;
+            left: 0;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
     </style>
 </head>
+
 <body>
-    <button id="btn1">移动</button>
-    <button id="btn2">移动2</button>
+    <button id="btn0">复原</button>
+    <button id="btn1">移动800</button>
+    <button id="btn2">移动1200</button>
+    <button id="btn3">获取当前的属性值</button>
     <div id="dv"></div>
     <script src="common.js"></script>
     <script>
-    my$("btn1").onclick=function(){
-        animate(my$("dv"),800)
-    }
+        my$("btn0").onclick = function () {
+            var json = {
+                "width": 200,
+                "left": 0,
+                "height": 200
+            }
+            animate3(my$("dv"), json)
+        }
+        my$("btn1").onclick = function () {
+            var json = {
+                "width": 300,
+                "left": 800,
+                "height": 400
+            }
+            animate4(my$("dv"), json, function () {
+                var json = {
+                    "width": 100,
+                    "left": 350,
+                    "top": 120,
+                    "height": 200
+                }
+                animate4(my$("dv"), json, function () {
+                    var json = {
+                        "width": 80,
+                        "left": 200,
+                        "top": 500,
+                        "height": 20
+                    }
+                    animate4(my$("dv"), json, function () {
+                        var json = {
+                            "width": 200,
+                            "left": 0,
+                            "height": 200,
+                            "top": 0
+                        }
+                        animate4(my$("dv"), json)
+                    })
+                })
+
+            })
+        }
+        // my$("btn1").onclick = function () {
+        //     animate(my$("dv"), "left",800)
+        // }
+        // my$("btn2").onclick = function () {
+        //     animate(my$("dv"), "width",1200)
+        // }
+        my$("btn3").onclick = function () {
+            console.log(getStyle(my$("dv"), "top"))
+        }
     </script>
 </body>
+
 </html>

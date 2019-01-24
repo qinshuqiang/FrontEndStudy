@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div {
+        width: 200px;
+        height: 200px;
+        border: 1px solid red;
+        overflow: auto;
+    }
+    input {
+        position: absolute;
+        left: 50%;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="dv">猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪猜猜我在哪</div>
+    <input id="btn" type="button" value="点击显示" />
+    <script src="common.js"></script>
+    <script>
+        var btn = my$("btn");
+        var dv = my$("dv");
+        btn.onclick = function () {
+            console.log(dv.scrollWidth);
+            console.log(dv.scrollHeight);
+            console.log(dv.scrollTop);
+            console.log(dv.scrollLeft);
+        }
+        dv.onscroll=function(){
+            // console.log(dv.scrollWidth);
+            // console.log(dv.scrollHeight);
+            console.log(dv.scrollTop);
+            // console.log(dv.scrollLeft);
+        }
+    </script>
+</body>
+
+</html>

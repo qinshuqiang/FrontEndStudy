@@ -80,22 +80,104 @@ function removeElementListener(element, type, fnName) {
     }
 }
 /**
- * 一个小小的计时移动函数
+ * 获取元素任意属性的值兼容代码
  * @param {元素} element 
- * @param {移动的距离} target 
+ * @param {属性名称（字符串样式）} attr
+ * return 属性值 
  */
-function animate(element, target) {
+function getStyle(element, attr) {
+    //判断浏览器是否支持此方法
+    return window.getComputedStyle ? window.getComputedStyle(element, null)[attr] : element.currentStyle[attr];
+}
+/**
+ * 获取任意一个属性的当前属性值，改变到目标属性
+ * @param {元素} element 
+ * @param {到达的位置} target 
+ *  @param {属性名字} attr 
+ */
+// 匀速
+function animate(element, attr, target) {
     clearInterval(element.timeID);
     element.timeID = setInterval(function () {
-        var current = element.offsetLeft;//数据类型，没有PX
+        var current = parseInt(getStyle(element, attr))
         var step = 10;
-        step = current < target ? step : -step;
+        step = target > current ? step : -step;
         current += step;
-        if (Math.abs(target - current) > Math.abs(step)) {
-            element.style.left = current + "px";
+        if (Math.abs(current - target) > Math.abs(step)) {
+            element.style[attr] = current + "px";
         } else {
             clearInterval(element.timeID);
-            element.style.left = target + "px";
+            element.style[attr] = target + "px";
         }
-    },50)
+    }, 20)
+}
+// 由快到慢
+function animate2(element, attr, target) {
+    clearInterval(element.timeID);
+    element.timeID = setInterval(function () {
+        var current = parseInt(getStyle(element, attr))
+        var step = (target - current) / 10;
+        step = step > 0 ? Math.ceil(step) : Math.floor(step);
+        console.log("当前位置:" + current + "目标位置:" + target + "位置移动长度:" + step)
+        current += step;
+        element.style[attr] = current + "px";
+        if (current == target) {
+            clearInterval(element.timeID)
+        }
+    }, 20)
+}
+/**
+ * 获取任意多个属性的当前属性值，改变到目标属性
+ * @param {元素} element 
+ * @param {到达的位置} target 
+ *  @param {属性名字} attr 
+ */
+function animate3(element, json) {
+    clearInterval(element.timeID);
+    element.timeID = setInterval(function () {
+        var flag=true;
+        for (var attr in json) {
+            var current = parseInt(getStyle(element, attr))
+            var step = (json[attr] - current) / 10;
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            console.log("当前位置:" + current + "目标位置:" + json[attr] + "位置移动长度:" + step)
+            current += step;
+            element.style[attr] = current + "px"; 
+            if(current!=json[attr]){
+                flag=false;
+            }  
+        }
+        if (flag) {
+            clearInterval(element.timeID)
+        }
+    }, 20)
+}
+/**
+ * 获取任意多个属性的当前属性值，改变到目标属性,增加回调函数
+ * @param {元素} element 
+ * @param {到达的位置} target 
+ *  @param {属性名字} attr 
+ */
+function animate4(element, json,fn) {
+    clearInterval(element.timeID);
+    element.timeID = setInterval(function () {
+        var flag=true;
+        for (var attr in json) {
+            var current = parseInt(getStyle(element, attr))
+            var step = (json[attr] - current) / 10;
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            console.log("当前位置:" + current + "目标位置:" + json[attr] + "位置移动长度:" + step)
+            current += step;
+            element.style[attr] = current + "px"; 
+            if(current!=json[attr]){
+                flag=false;
+            }  
+        }
+        if (flag) {
+            clearInterval(element.timeID);
+            if(fn){
+                fn();
+            }
+        }
+    }, 20)
 }
