@@ -135,17 +135,17 @@ function animate2(element, attr, target) {
 function animate3(element, json) {
     clearInterval(element.timeID);
     element.timeID = setInterval(function () {
-        var flag=true;
+        var flag = true;
         for (var attr in json) {
             var current = parseInt(getStyle(element, attr))
             var step = (json[attr] - current) / 10;
             step = step > 0 ? Math.ceil(step) : Math.floor(step);
             console.log("当前位置:" + current + "目标位置:" + json[attr] + "位置移动长度:" + step)
             current += step;
-            element.style[attr] = current + "px"; 
-            if(current!=json[attr]){
-                flag=false;
-            }  
+            element.style[attr] = current + "px";
+            if (current != json[attr]) {
+                flag = false;
+            }
         }
         if (flag) {
             clearInterval(element.timeID)
@@ -158,24 +158,76 @@ function animate3(element, json) {
  * @param {到达的位置} target 
  *  @param {属性名字} attr 
  */
-function animate4(element, json,fn) {
+function animate4(element, json, fn) {
     clearInterval(element.timeID);
     element.timeID = setInterval(function () {
-        var flag=true;
+        var flag = true;
         for (var attr in json) {
             var current = parseInt(getStyle(element, attr))
             var step = (json[attr] - current) / 10;
             step = step > 0 ? Math.ceil(step) : Math.floor(step);
             console.log("当前位置:" + current + "目标位置:" + json[attr] + "位置移动长度:" + step)
             current += step;
-            element.style[attr] = current + "px"; 
-            if(current!=json[attr]){
-                flag=false;
-            }  
+            element.style[attr] = current + "px";
+            if (current != json[attr]) {
+                flag = false;
+            }
         }
         if (flag) {
             clearInterval(element.timeID);
-            if(fn){
+            if (fn) {
+                fn();
+            }
+        }
+    }, 20)
+}
+/**
+ * 获取任意多个属性的当前属性值，改变到目标属性,增加回调函数（增加了透明度）
+ * @param {元素} element 
+ * @param {到达的位置} target 
+ *  @param {属性名字} attr 
+ */
+function animate4(element, json, fn) {
+    //清理定时器
+    clearInterval(element.timeID);
+    // 定时器
+    element.timeID = setInterval(function () {
+        // 默认，假设所有属性都到达了目标
+        var flag = true;
+        // 遍历json对象中的每个属性和属性对应得目标值
+        for (var attr in json) {
+            // 判断属性是否opacity
+            if (attr == "opacity") {
+                //把opacity属性放大一百倍，便于取余计算
+                var current = getStyle(element, attr) * 100;
+                // 设置每次变化的大小
+                var step = (json[attr] - current) / 10;
+                // 进行取余计算，正数则向上取余，负数则向下取余
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                console.log("当前位置:" + current + "目标位置:" + json[attr] + "位置移动长度:" + step)
+                // 开始计算渐变
+                current += step;
+                // 记得最后的属性要缩小一百倍哈
+                element.style[attr] = current / 100;
+            } else if (attr == "zIndex") {   //判断属性是否z-index
+                // 直接赋值，因为他的类型就是数字
+                element.style[attr] = current;
+            } else {    //如果目标是普通属性
+                var current = parseInt(getStyle(element, attr))
+                var step = (json[attr] - current) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                console.log("当前位置:" + current + "目标位置:" + json[attr] + "位置移动长度:" + step)
+                current += step;
+                element.style[attr] = current + "px";
+            }
+            // 最后进行判断是否到了目标值
+            if (current != json[attr]) {
+                flag = false;
+            }
+        }
+        if (flag) {
+            clearInterval(element.timeID);
+            if (fn) {
                 fn();
             }
         }

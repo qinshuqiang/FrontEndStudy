@@ -232,7 +232,7 @@ window.setTimeout(函数，时间);
 
 clearTimeout(需要清除的一次性定时器);
 
-# offset属性
+# offset系列
 
 offset获取
 
@@ -243,7 +243,7 @@ offset获取
 | .offsetLeft   | 在文档流中，包含了自身和父级元素的外边距，父级元素内边距和边框的距离<br/>脱离文档流，计算自己的left和自己的margin |
 | .offsetTop    | 在文档流中，包含了自身和父级元素的外边距，父级元素内边距和边框的距离<br/>脱离文档流，计算自己的left和自己的margin |
 
-## scroll系列
+# scroll系列
 
 | 属性                                    | 描述                                                 |
 | --------------------------------------- | ---------------------------------------------------- |
@@ -253,6 +253,19 @@ offset获取
 | .scrollLeft                             | 向左卷曲的距离                                       |
 | .getComputedStyle(element,null).css属性 | 获取向左距离，ie8不支持                              |
 | .currentStyle.css属性                   | 获取向左距离，ie8支持                                |
+
+# client系列
+
+| 属性          | 描述                                                 |
+| ------------- | ---------------------------------------------------- |
+| .clientWidth  | 获取可视区域的宽，不包括边框，得到的是边框内部的宽度 |
+| .clientHeight | 获取可视区域的高，不包括边框，得到的是边框内部的高度 |
+| .clientTop    | 获取上边框的宽度                                     |
+| .clientLeft   | 获取左边框的宽度                                     |
+| .clientX      | 获取可视区域的X轴的值                                |
+| .clientY      | 获取可视区域的Y轴的值                                |
+
+
 
 # onscroll事件
 
