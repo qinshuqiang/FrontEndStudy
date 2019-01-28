@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dv"></div>
+    <button id="btn">改变颜色</button>
+    <script src="common.js"></script>
+    <script>
+        // function ChangeStyle(btnId, dvId, color) {
+        //     this.btnObj = document.getElementById(btnId);
+        //     this.dvObj = document.getElementById(dvId);
+        //     this.color = color;
+        // }
+        // //数据共享来改变颜色
+        // ChangeStyle.prototype.init = function () {
+        //     // console.log(this);
+        //     var that=this;
+        //     this.btnObj.onclick=function(){
+        //         that.dvObj.style.backgroundColor=that.color;
+        //     }
+        // };
+        // // 实例化对象
+        // var cs = new ChangeStyle("btn", "dv", "yellow");
+        // cs.init();
+        // //自定义构建函数
+        // function Person() {
+        //     this.sayHi = function () {
+        //         console.log(this);
+        //     }
+        // };
+        // var p = new Person();
+        // p.sayHi();
+
+        function ChangeStyle(btnId, dvId, json) {
+            this.btnObj = btnId;
+            this.dvObj = dvId;
+            this.json = json;
+        }
+        ChangeStyle.prototype.init = function () {
+            //因为按钮里面的点击事件中的this是按钮，所以要用新的变量存储上面的this
+            // 避免跟下面的this冲突
+            var that = this;
+            this.btnObj.onclick = function () {
+                for (var key in that.json) {
+                    that.dvObj.style[key] = that.json[key];
+                }
+            }
+        }
+        // 实例化对象
+        var json = {
+            "width": "500px",
+            "height": "500px",
+            "backgroundColor": "yellow"
+        };
+        var cs = new ChangeStyle(my$("btn"), my$("dv"), json);
+        cs.init();
+        function Dv() {
+            this.element = document.createElement("div");
+            var div = this.element;
+            div.style.position = "absolute";
+            // div.style.width = this.width + "px";
+            // div.style.height = this.height + "px";
+            // div.style.backgroundColor = this.color;
+            // 将小方块加入地图
+            document.appendChild(div);
+        }
+    </script>
+</body>
+
+</html>

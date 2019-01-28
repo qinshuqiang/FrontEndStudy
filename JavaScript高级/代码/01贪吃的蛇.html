@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .map {
+        width: 600px;
+        height: 800px;
+        background-color: #654141;
+        position: relative;
+    }
+    </style>
+</head>
+<body>
+    <div class="map" id="map"></div>
+  
+    <!-- <script>
+        //自调用函数
+    (function(){
+        var elements=[];  //用来保存每个小方块食物的
+        //食物就是一个对象，有宽有高有颜色，有横纵坐标，先定义构造函数，然后创建对象
+        function Food(x,y,width,height,color){
+            this.x=x;
+            this.y=y;
+            this.width=width||20;
+            this.height=height||20;
+            this.color=color||"green";
+        }
+    //    为原型添加初始化的方法（作用：在页面上显示这个食物）
+    Food.prototype.init=function(map){
+        // 创建 div 
+        var div =document.createElement("div");
+        map.appendChild(div);
+        //设置div的样式
+        div.style.width=this.width+"px";
+        div.style.height=this.height+"px";
+        div.style.backgroundColor=this.color;
+        // 横纵坐标应该随机产生的，先停止
+        // 先脱离文档流
+        div.style.position="absolute";
+        // 随机横坐标
+        this.x=
+        this.y=
+        this.style.left=
+        this.style.right=
+
+        //把div加入到数组elements中
+        elements.push(div);
+    };
+
+        // 把food暴露给window
+        window.Food=Food;
+    }());
+    // 外部测试
+    // var fd=new Food();
+    // console.log(fd.width)
+    </script> -->
+</body>
+<script src="common.js"></script>
+</html>
