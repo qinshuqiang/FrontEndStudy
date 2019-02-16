@@ -266,41 +266,41 @@ function animate4(element, json, fn) {
     // 把局部对象的返回值暴露给window顶级对象
     window.Random = new Random();
 })(window);
-(function (window) {
-    var map = document.querySelector(".map");
-    //食物的构造函数
-    function Food(width, height, color) {
-        this.width = width || 20;
-        this.height = height || 20;
-        //横纵坐标
-        this.x = 0;
-        this.y = 0;
-        //颜色
-        this.color = color;
-        this.element = document.createElement("div");
-    }
-    //初始化小方块显示的效果及其位置
-    Food.prototype.init = function (map) {
-        //设置小方块的样式
-        var div = this.element;
-        div.style.position = "absolute";
-        div.style.width = this.width + "px";
-        div.style.height = this.height + "px";
-        div.style.backgroundColor = this.color;
-        // 将小方块加入地图
-        map.appendChild(div);
-        this.render(map);
-    }
-    Food.prototype.render = function (map) {
-        // 产生随机横纵坐标
-        var x = Random.getRandom(0, map.offsetWidth / this.width) * this.width;
-        var y = Random.getRandom(0, map.offsetHeight / this.height) * this.height;
-        this.x = x;
-        this.y = y;
-        var div = this.element;
-        div.style.left = this.x + "px";
-        div.style.top = this.y + "px";
-    }
-    var fd = new Food(20, 20, "green");
-    fd.init(map);
-})(window);
+// (function (window) {
+//     var map = document.querySelector(".map");
+//     //食物的构造函数
+//     function Food(width, height, color) {
+//         this.width = width || 20;
+//         this.height = height || 20;
+//         //横纵坐标
+//         this.x = 0;
+//         this.y = 0;
+//         //颜色
+//         this.color = color;
+//         this.element = document.createElement("div");
+//     }
+//     //初始化小方块显示的效果及其位置
+//     Food.prototype.init = function (map) {
+//         //设置小方块的样式
+//         var div = this.element;
+//         div.style.position = "absolute";
+//         div.style.width = this.width + "px";
+//         div.style.height = this.height + "px";
+//         div.style.backgroundColor = this.color;
+//         // 将小方块加入地图
+//         map.appendChild(div);
+//         this.render(map);
+//     }
+//     Food.prototype.render = function (map) {
+//         // 产生随机横纵坐标
+//         var x = Random.getRandom(0, map.offsetWidth / this.width) * this.width;
+//         var y = Random.getRandom(0, map.offsetHeight / this.height) * this.height;
+//         this.x = x;
+//         this.y = y;
+//         var div = this.element;
+//         div.style.left = this.x + "px";
+//         div.style.top = this.y + "px";
+//     }
+//     var fd = new Food(20, 20, "green");
+//     fd.init(map);
+// })(window);
