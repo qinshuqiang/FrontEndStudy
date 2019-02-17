@@ -124,6 +124,100 @@ clearQueue：是否清除动画队列---true或false    默认为false
 
 jumpToEnd：是跳转到当前动画的最终效果---true或false    默认为false
 
+
+
+
+
+
+
+## jQuery操作节点
+
+### 动态创建节点
+
+### append()或appendTo()
+
+$(选择器).append('需要创建的节点');
+
+也可以：
+
+var $jq=$('节点内容');
+
+$(选择器).append($jq);
+
+两个方法一样的
+
+### prepend()或prependTo()
+
+在元素开始添加一个子元素，方法和append()类似
+
+### after()
+
+在后方添加一个兄弟元素
+
+### before()
+
+在后方添加一个兄弟元素
+
+### 清空和删除节点
+
+#### 清空节点
+
+##### html("")或者empty()
+
+清空选择到元素内部的内容，html()会造成内存泄漏（即清空后该元素所注册的事件无法清除）
+
+一般用empty()，该方法jQuery会进行清空内存数据的方法，阻止内存泄漏
+
+#### 删除节点
+
+##### remove()
+
+删除选择到的节点
+
+#### 克隆节点
+
+##### clone();
+
+克隆选择到的元素，默认参数为false：深度复制，不支持浅复制，不会复制事件，参数为true：事件也会复制
+
+
+
+## jQuery特殊属性操作
+
+#### val()
+
+用来操作value属性的 
+
+#### html()和text()
+
+html操作标签和内容，text操作内容
+
+#### width()和height()
+
+操作width和height，返回的是number
+
+只获取width和height的值，不包括内边距
+
+#### innerWidth()和innerHeight()
+
+操作宽高+padding的值
+
+#### outerWidth()和outerHeight()
+
+参数默认为false：获取宽高+padding+border
+
+参数为true：获取宽高+padding+border+margin
+
+#### scrollTop()和scrollLeft()
+
+被卷去的高度和宽度
+
+#### offset()和position()
+
+offset获取元素相对于document的位置
+
+position获取元素相对于有定位父元素的位置
+
 ## 方法
 
 #### mouseover()和mouseenter()
